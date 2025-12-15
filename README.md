@@ -1,6 +1,6 @@
 # RAG-based Research Paper Comparator & Summarizer
 
-A production-grade RAG (Retrieval-Augmented Generation) system for analyzing and comparing research papers using a locally hosted Mistral 7B model via Ollama.
+This project is an AI-powered Research Paper Analysis System built using Retrieval-Augmented Generation (RAG). It allows users to upload research papers in PDF format and interact with them through natural language queries. The system answers questions strictly based on the content of the uploaded papers and can also compare two research papers across multiple academic dimensions.
 
 ## Architecture
 
@@ -17,14 +17,19 @@ A production-grade RAG (Retrieval-Augmented Generation) system for analyzing and
 - **Relevance Detection**: Questions unrelated to papers are rejected with warnings
 - **Academic Tone**: Maintains scholarly language in responses
 
-  Home Page:
-  <img width="1080" height="776" alt="Screenshot 2025-12-15 at 11 06 08 AM" src="https://github.com/user-attachments/assets/3816e912-b433-43a4-8ff3-c6479aee4489" />
+Home Page:
 
-  Single Paper:
-<img width="1041" height="776" alt="Screenshot 2025-12-15 at 11 05 49 AM" src="https://github.com/user-attachments/assets/5b13bb85-be2b-4362-a348-24aea2befe00" />
+<img width="1080" height="776" alt="Screenshot 2025-12-15 at 11 06 08 AM" src="https://github.com/user-attachments/assets/3816e912-b433-43a4-8ff3-c6479aee4489" />
+
+
+Single Paper:
+
+<img width="1080" height="776" alt="Screenshot 2025-12-15 at 11 05 49 AM" src="https://github.com/user-attachments/assets/5b13bb85-be2b-4362-a348-24aea2befe00" />
+
 
 Paper Comparison:
-<img width="700" height="820" alt="Screenshot 2025-12-15 at 11 28 48 AM" src="https://github.com/user-attachments/assets/d2a4dc51-2c69-4cc5-b991-6c28b358a264" />
+
+<img width="1080" height="776" alt="Screenshot 2025-12-15 at 11 28 48 AM" src="https://github.com/user-attachments/assets/d2a4dc51-2c69-4cc5-b991-6c28b358a264" />
 
 
 ## Usage
@@ -166,29 +171,8 @@ Compare two papers.
 }
 ```
 
-## Configuration
-
-### Backend Environment Variables
-
-Create `backend/.env`:
-```
-OLLAMA_BASE_URL=http://localhost:11434
-OLLAMA_MODEL=mistral:latest
-EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
-CHUNK_SIZE=512
-CHUNK_OVERLAP=50
-TOP_K=5
-SIMILARITY_THRESHOLD=0.3
-```
 
 Note: `OLLAMA_MODEL` should be set to the model name as shown by `ollama list` (typically `mistral:latest`, not `mistral:7b`). The backend will validate the model exists on startup and auto-correct if you use a prefix like `mistral`.
-
-### Frontend Environment Variables
-
-Create `frontend/.env.local`:
-```
-NEXT_PUBLIC_API_URL=http://localhost:8000
-```
 
 ## Notes
 
@@ -203,8 +187,4 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 2. **Model not found**: Run `ollama pull mistral:7b`
 3. **PDF extraction fails**: Ensure PDFs are not corrupted or password-protected
 4. **Low relevance scores**: Adjust `SIMILARITY_THRESHOLD` in `.env`
-
-## License
-
-MIT
 
