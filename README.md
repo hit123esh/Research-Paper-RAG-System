@@ -17,113 +17,15 @@ A production-grade RAG (Retrieval-Augmented Generation) system for analyzing and
 - **Relevance Detection**: Questions unrelated to papers are rejected with warnings
 - **Academic Tone**: Maintains scholarly language in responses
 
-## Prerequisites
+  Home Page:
+  <img width="1080" height="776" alt="Screenshot 2025-12-15 at 11 06 08 AM" src="https://github.com/user-attachments/assets/3816e912-b433-43a4-8ff3-c6479aee4489" />
 
-### 1. Install Ollama
+  Single Paper:
+<img width="1041" height="776" alt="Screenshot 2025-12-15 at 11 05 49 AM" src="https://github.com/user-attachments/assets/5b13bb85-be2b-4362-a348-24aea2befe00" />
 
-```bash
-# macOS
-brew install ollama
+Paper Comparison:
+<img width="700" height="820" alt="Screenshot 2025-12-15 at 11 28 48 AM" src="https://github.com/user-attachments/assets/d2a4dc51-2c69-4cc5-b991-6c28b358a264" />
 
-# Linux
-curl -fsSL https://ollama.com/install.sh | sh
-
-# Windows
-# Download from https://ollama.com/download
-```
-
-### 2. Pull Mistral 7B Model
-
-```bash
-ollama pull mistral:7b
-```
-
-### 3. Start Ollama Service
-
-```bash
-ollama serve
-```
-
-Ollama will run on `http://localhost:11434` by default.
-
-### 4. Python Environment
-
-Python 3.9+ required.
-
-### 5. Node.js
-
-Node.js 18+ required for the frontend.
-
-## Installation
-
-### Backend Setup
-
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-### Frontend Setup
-
-```bash
-cd frontend
-npm install
-```
-
-## Running the Application
-
-### Quick Start (Using Scripts)
-
-1. **Start Ollama** (if not already running):
-```bash
-ollama serve
-```
-
-2. **Start Backend** (in a terminal):
-```bash
-cd backend
-./run.sh
-```
-
-3. **Start Frontend** (in another terminal):
-```bash
-cd frontend
-./run.sh
-```
-
-### Manual Start
-
-#### 1. Start Ollama (if not already running)
-
-```bash
-ollama serve
-```
-
-#### 2. Start Backend
-
-```bash
-cd backend
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8000
-```
-
-Note: The command is `uvicorn app.main:app` (not `uvicorn main:app`) because `main.py` is inside the `app` directory.
-
-Backend will be available at `http://localhost:8000`
-
-#### 3. Start Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Frontend will be available at `http://localhost:3000`
 
 ## Usage
 
